@@ -86,7 +86,7 @@ public class Vertex implements IVertex {
     
     /**
      * Méthode pour afficher le chemin optimal dans le bon ordre
-     * On m'a piqué mon travail.....
+     * 
      */
     public void displayPath() {
     	Iterator<IVertex> it = successors.keySet().iterator();
