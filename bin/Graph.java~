@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Graph implements IGraph {
+    public Graph() {
+        vertices = new Hashtable<String,Vertex>();
+    }
+
+    public IVertex addVertex(String name) {
+        if (vertices.containsKey(name)) {
+            return vertices.get(name);
+        }
+        
+        Vertex v = new Vertex();
+        v.setName(name);
+        vertices.put(name, v);
+        return v;
+    }
+
+    public IVertex getVertex(String name) {
+        return vertices.get(name);
+
+    }
+
+    public void display() {
+        Iterator<Vertex> it = vertices.values().iterator();
+        System.out.println("vertices");
+        while(it.hasNext()) {            
+            Vertex v = it.next();
+            System.out.println(v.getName());
+            v.display();
+        }
+    }
+
+    private Hashtable<String,Vertex> vertices;
+
+}
